@@ -13,22 +13,34 @@
 
     <TextView
         android:id="@+id/textViewItemName"
-        android:layout_width="wrap_content"
+        android:layout_width="312dp"
         android:layout_height="wrap_content"
-        android:text="Contact Name"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_toRightOf="@+id/image"
-        android:layout_centerVertical="true"
-        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-        android:layout_marginLeft="?android:attr/listPreferredItemPaddingLeft"/>
+        android:text="Nombre"
+        android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
 
     <TextView
         android:id="@+id/textViewItemCiudad"
-        android:layout_width="wrap_content"
+        android:layout_width="123dp"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="204dp"
+        android:layout_below="@+id/textViewItemName"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="8dp"
         android:layout_toRightOf="@+id/image"
-        android:text="Contact Ciudad"
+        android:text="Ciudad"
+        android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
+
+    <TextView
+        android:id="@+id/textViewItemTelefono"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewItemName"
+        android:layout_marginLeft="147dp"
+        android:layout_marginTop="9dp"
+        android:layout_toRightOf="@+id/image"
+        android:text="Telefono"
         android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
 
 

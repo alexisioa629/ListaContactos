@@ -1,11 +1,13 @@
 package ec.edu.tecnologicoloja.contactlist.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.squareup.picasso.Picasso;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,6 +58,39 @@ public class ListActivity extends AppCompatActivity  implements AdapterView.OnIt
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         // start detail screen when an item list is pressed
         //startActivity(ContactActivity.getIntent(this, mListContacts.get(position).getObjectId()));
-        Toast.makeText(this,"click sobre item"+position,Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,"click sobre item",Toast.LENGTH_LONG).show();
+
+        //obtener los datos del contacto
+        String nombre= mListContacts.get(position).getName();
+        String correo= mListContacts.get(position).getEmail();
+        String ciudad= mListContacts.get(position).getCity();
+        String telefono= mListContacts.get(position).getPhone();
+        String descripcion= mListContacts.get(position).getDescription();
+        String imagen= mListContacts.get(position).getImageUrl();
+
+
+
+
+
+        Toast.makeText(this,""+nombre,Toast.LENGTH_LONG).show();
+
+        //intent para cambiar a la actividad contact
+        Intent iCambiarContacActi= new Intent(ListActivity.this,ContactActivity.class);
+        // enviar los datos por medio de extras
+        iCambiarContacActi.putExtra("putNombre",nombre);
+        iCambiarContacActi.putExtra("putCorreo",correo);
+        iCambiarContacActi.putExtra("putCiudad",ciudad);
+        iCambiarContacActi.putExtra("putTelefono",telefono);
+        iCambiarContacActi.putExtra("putDescripcion",descripcion);
+        iCambiarContacActi.putExtra("putImagen",imagen);
+
+
+
+
+
+       /* Bundle bundle= new Bundle();
+        bundle.putSerializable("putContacto ",contacto);
+        iCambiarContacActi.putExtras(bundle);*/
+        startActivity(iCambiarContacActi);
     }
 }

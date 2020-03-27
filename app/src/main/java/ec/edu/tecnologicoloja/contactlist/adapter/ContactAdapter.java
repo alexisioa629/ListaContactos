@@ -54,8 +54,8 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
             view = LayoutInflater.from(context).inflate(R.layout.activity_item_list, parent, false);
             viewHolder.mContactName = (TextView) view.findViewById(R.id.textViewItemName);
             viewHolder.mContactImage = (ImageView) view.findViewById(R.id.image);
-
-
+            viewHolder.mCiudad = (TextView) view.findViewById(R.id.textViewItemCiudad);
+            viewHolder.mTelefono = (TextView) view.findViewById(R.id.textViewItemTelefono);
             view.setTag(viewHolder);
 
         } else {
@@ -63,11 +63,12 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
             view = convertView;
         }
 
-        // Set text with the item name
+        // traer nombre
         viewHolder.mContactName.setText(contactArrayList.get(position).getName());
-
-        // set text with the item city
-
+        //traer Ciudad
+        viewHolder.mCiudad.setText(contactArrayList.get(position).getCity());
+        // traer telefono
+        viewHolder.mTelefono.setText(contactArrayList.get(position).getPhone());
 
 
 
@@ -90,6 +91,8 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
     static class ViewHolder {
         protected TextView mContactName;
         protected ImageView mContactImage;
+        protected  TextView mCiudad;
+        protected  TextView mTelefono;
 
 
     }

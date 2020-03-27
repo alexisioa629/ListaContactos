@@ -1,8 +1,9 @@
 package ec.edu.tecnologicoloja.contactlist.model;
 
 
+import java.io.Serializable;
 
-public class Contact {
+public class Contact implements Serializable {
     private String updatedAt;
     private String birthday;
     private String phone;
